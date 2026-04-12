@@ -7,8 +7,10 @@ import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("/customers")
+
 public class CustomerController {
 
     private final CustomerFacade facade;
@@ -21,6 +23,8 @@ public class CustomerController {
     public CustomerResponse create(@Valid @RequestBody CustomerRequest request) {
         return facade.create(request);
     }
+
+
 
     @GetMapping
     public Page<CustomerResponse> getAll(
